@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Film } from "lucide-react";
 import { Header } from "@/components/Header";
 import { dishes } from "@/lib/data";
 
@@ -75,5 +76,3 @@ function Footer() {
     </footer>
   );
 }
-
-import { Film } from "lucide-react";
