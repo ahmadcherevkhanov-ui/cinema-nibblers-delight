@@ -116,7 +116,7 @@ function Index() {
               <Utensils className="h-4 w-4" /> Bekijk het menu
             </a>
             <a
-              href="https://www.google.com/maps/dir/?api=1&destination=Marktplein+1,+8670+Koksijde"
+              href="https://www.google.com/maps/dir//Cinema+K-fe,+Marktplein+1,+8670+Koksijde/@51.1112863,2.6266418,17z/data=!4m17!1m7!3m6!1s0x47dcbca30821d83b:0x34648a72f26a1398!2sCinema+K-fe!8m2!3d51.111283!4d2.6292167!16s%2Fg%2F11bwm3pxn7!4m8!1m0!1m5!1m1!1s0x47dcbca30821d83b:0x34648a72f26a1398!2m2!1d2.6292167!2d51.111283!3e3?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 border border-border bg-card/40 px-6 py-3 text-sm backdrop-blur transition hover:bg-card"
