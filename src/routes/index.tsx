@@ -1,10 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { MapPin, Phone, Clock, Star, Film, Utensils } from "lucide-react";
+import { Header } from "@/components/Header";
+import { dishes, reviews, hours } from "@/lib/data";
 import heroImg from "@/assets/hero-brasserie.jpg";
-import steakImg from "@/assets/dish-steak.jpg";
-import waffleImg from "@/assets/dish-waffle.jpg";
-import croquettesImg from "@/assets/dish-croquettes.jpg";
-import beerImg from "@/assets/dish-beer.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -27,66 +25,13 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const dishes = [
-  { name: "Biefstuk met pepersaus", desc: "Met huisgemaakte frieten", img: steakImg, price: "€24" },
-  { name: "Kaaskroketten", desc: "Goudbruin, met frieten en citroen", img: croquettesImg, price: "€18" },
-  { name: "Wafel & vanilleijs", desc: "Met een cappuccino erbij", img: waffleImg, price: "€11" },
-  { name: "Sint-Idesbaldus Bruin", desc: "Lokaal abdijbier van het vat", img: beerImg, price: "€5" },
-];
-
-const reviews = [
-  {
-    name: "Angela Lefevre",
-    text: "Gezellige plek met vlotte en supervriendelijke bediening. De steak was ronduit heerlijk en perfect gebakken.",
-    when: "6 maanden geleden",
-  },
-  {
-    name: "Jean Philip Wymeersch",
-    text: "Cinema K-fe is een vaste waarde in Koksijde. Lasagne, rundstartaar en de suggesties zijn gewoon lekker. Dimitri en zijn team — constante van kwaliteit en service.",
-    when: "een jaar geleden",
-  },
-  {
-    name: "Robin Dedoncker",
-    text: "Ideale plek voor een lekker diner voor de film. Vriendelijke service en ruime parking. Wij gaan hier al jaren.",
-    when: "2 jaar geleden",
-  },
-  {
-    name: "Melanie D",
-    text: "We gaan er al jaren. Vriendelijke bediening, lekker eten en super aangenaam om er iets te drinken voor je een filmpje gaat bekijken.",
-    when: "2 jaar geleden",
-  },
-];
-
-const hours = [
-  ["Maandag", "11:30 – 21:00"],
-  ["Dinsdag", "11:30 – 21:00"],
-  ["Woensdag", "Gesloten"],
-  ["Donderdag", "Gesloten"],
-  ["Vrijdag", "11:30 – 22:00"],
-  ["Zaterdag", "11:30 – 22:00"],
-  ["Zondag", "11:30 – 20:00"],
-];
-
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground bg-grain">
-      {/* NAV */}
-      <header className="absolute top-0 left-0 right-0 z-20">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
-          <a href="#top" className="flex items-center gap-2 font-display text-xl tracking-tight">
-            <Film className="h-5 w-5 text-primary animate-flicker" />
-            <span>Cinema <span className="text-marquee italic">K-fe</span></span>
-          </a>
-          <nav className="hidden gap-8 text-sm text-muted-foreground md:flex">
-            <a href="#menu" className="hover:text-foreground transition">Menu</a>
-            <a href="#reviews" className="hover:text-foreground transition">Reviews</a>
-            <a href="#bezoek" className="hover:text-foreground transition">Bezoek</a>
-          </nav>
-        </div>
-      </header>
+      <Header />
 
       {/* HERO */}
-      <section id="top" className="relative h-[100svh] min-h-[640px] w-full overflow-hidden">
+      <section className="relative h-[100svh] min-h-[640px] w-full overflow-hidden">
         <img
           src={heroImg}
           alt="Sfeerbeeld van Cinema K-fe brasserie in Koksijde"
@@ -109,12 +54,12 @@ function Index() {
             en een warm onthaal — al jaren een vaste waarde aan het Marktplein.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
-            <a
-              href="#menu"
+            <Link
+              to="/menu"
               className="group inline-flex items-center gap-2 bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-glow transition hover:brightness-110"
             >
               <Utensils className="h-4 w-4" /> Bekijk het menu
-            </a>
+            </Link>
             <a
               href="https://www.google.com/maps/dir//Cinema+K-fe,+Marktplein+1,+8670+Koksijde/@51.1112863,2.6266418,17z/data=!4m17!1m7!3m6!1s0x47dcbca30821d83b:0x34648a72f26a1398!2sCinema+K-fe!8m2!3d51.111283!4d2.6292167!16s%2Fg%2F11bwm3pxn7!4m8!1m0!1m5!1m1!1s0x47dcbca30821d83b:0x34648a72f26a1398!2m2!1d2.6292167!2d51.111283!3e3?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
@@ -140,7 +85,7 @@ function Index() {
       </section>
 
       {/* MENU */}
-      <section id="menu" className="relative py-32">
+      <section className="relative py-32">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-20 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div>
@@ -179,7 +124,7 @@ function Index() {
       </section>
 
       {/* REVIEWS */}
-      <section id="reviews" className="relative border-y border-border bg-card/40 py-32">
+      <section className="relative border-y border-border bg-card/40 py-32">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-16 flex items-end justify-between">
             <div>
@@ -215,7 +160,7 @@ function Index() {
       </section>
 
       {/* VISIT */}
-      <section id="bezoek" className="relative py-32">
+      <section className="relative py-32">
         <div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-2">
           <div>
             <p className="mb-4 text-xs uppercase tracking-[0.3em] text-primary">Bezoek ons</p>
