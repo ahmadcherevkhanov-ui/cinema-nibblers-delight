@@ -164,7 +164,7 @@ function Index() {
                     loading="lazy"
                     width={1024}
                     height={1024}
-                    className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                    className="h-full w-full object-contain transition duration-700 group-hover:scale-105"
                   />
                   <div className="absolute right-3 top-3 bg-background/80 px-2 py-1 text-xs font-medium text-primary backdrop-blur">
                     {d.price}
