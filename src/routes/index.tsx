@@ -82,12 +82,6 @@ function Index() {
             <a href="#reviews" className="hover:text-foreground transition">Reviews</a>
             <a href="#bezoek" className="hover:text-foreground transition">Bezoek</a>
           </nav>
-          <a
-            href="tel:+32491640706"
-            className="rounded-sm border border-primary/40 px-4 py-2 text-sm text-primary transition hover:bg-primary hover:text-primary-foreground"
-          >
-            Reserveer
-          </a>
         </div>
       </header>
 
